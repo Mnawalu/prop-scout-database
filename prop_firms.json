@@ -14,19 +14,19 @@
         "black friday",
         "sale"
       ],
-      "execution_frequency_hours": 4
+      "execution_frequency_hours": 1
     },
     {
       "agent_id": "RuleAnalyzer_01",
       "agent_type": "rule_change_detector",
       "strictness_level": "high",
-      "execution_frequency_hours": 12
+      "execution_frequency_hours": 2
     },
     {
       "agent_id": "TrustValidator_01",
       "agent_type": "link_and_trust_checker",
       "check_trustpilot": true,
-      "execution_frequency_hours": 24
+      "execution_frequency_hours": 1
     }
   ],
   "firms": [
