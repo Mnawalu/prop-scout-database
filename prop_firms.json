@@ -1,0 +1,484 @@
+{
+  "version": "1.0.5",
+  "global_settings": {
+    "kill_switch": false,
+    "master_sync_frequency_hours": 1
+  },
+  "running_agents": [
+    {
+      "agent_id": "PriceScout_01",
+      "agent_type": "discount_scraper",
+      "target_keywords": [
+        "promo",
+        "discount",
+        "black friday",
+        "sale"
+      ],
+      "execution_frequency_hours": 4
+    },
+    {
+      "agent_id": "RuleAnalyzer_01",
+      "agent_type": "rule_change_detector",
+      "strictness_level": "high",
+      "execution_frequency_hours": 12
+    },
+    {
+      "agent_id": "TrustValidator_01",
+      "agent_type": "link_and_trust_checker",
+      "check_trustpilot": true,
+      "execution_frequency_hours": 24
+    }
+  ],
+  "firms": [
+    {
+      "id": "ftmo",
+      "name": "FTMO",
+      "website_url": "https://ftmo.com",
+      "description": "The gold standard of Forex prop firms with highly reliable payouts.",
+      "affiliate_link": "https://ftmo.com/?aff=YOUR_ID",
+      "tag": "FOREX • CFDs",
+      "is_trusted": true,
+      "logo_url": "https://ftmo.com/wp-content/themes/ftmov2/assets/images/logo.svg",
+      "selectors": {
+        "trust_score_selector": ".trustpilot-rating",
+        "payout_reliability_selector": "#payout-stats-table",
+        "rule_clarity_selector": ".rules-summary h3"
+      }
+    },
+    {
+      "id": "apex_funding",
+      "name": "Apex Trader Funding",
+      "website_url": "https://apextraderfunding.com",
+      "description": "Leading Futures firm known for frequent high-discount promotions.",
+      "affiliate_link": "https://apextraderfunding.com/?aff=YOUR_ID",
+      "tag": "FUTURES",
+      "is_trusted": true,
+      "logo_url": "https://apextraderfunding.com/images/logo.png",
+      "selectors": {
+        "trust_score_selector": ".tp-widget-score",
+        "payout_reliability_selector": ".payout-proof",
+        "rule_clarity_selector": ".evaluation-rules"
+      }
+    },
+    {
+      "id": "topstep",
+      "name": "Topstep",
+      "website_url": "https://topstep.com",
+      "description": "A pioneer in Futures funding with great educational resources.",
+      "affiliate_link": "https://topstep.com/?aff=YOUR_ID",
+      "tag": "FUTURES",
+      "is_trusted": true,
+      "logo_url": "https://topstep.com/logo.png",
+      "selectors": {
+        "trust_score_selector": ".trustpilot-score",
+        "payout_reliability_selector": ".withdrawals",
+        "rule_clarity_selector": ".trading-rules"
+      }
+    },
+    {
+      "id": "funding_pips",
+      "name": "Funding Pips",
+      "website_url": "https://fundingpips.com",
+      "description": "Fast-growing firm known for tight spreads and rapid payout times.",
+      "affiliate_link": "https://fundingpips.com/?aff=YOUR_ID",
+      "tag": "FOREX • CRYPTO",
+      "is_trusted": true,
+      "logo_url": "https://fundingpips.com/logo.png",
+      "selectors": {
+        "trust_score_selector": ".tp-score",
+        "payout_reliability_selector": ".payout-stats",
+        "rule_clarity_selector": ".faq-rules"
+      }
+    },
+    {
+      "id": "the5ers",
+      "name": "The5ers",
+      "website_url": "https://the5ers.com",
+      "description": "Instant funding models and extreme growth scale plans.",
+      "affiliate_link": "https://the5ers.com/?aff=YOUR_ID",
+      "tag": "FOREX",
+      "is_trusted": true,
+      "logo_url": "https://the5ers.com/logo.png",
+      "selectors": {
+        "trust_score_selector": ".trustpilot-widget span",
+        "payout_reliability_selector": ".growth-program",
+        "rule_clarity_selector": ".trading-guidelines"
+      }
+    },
+    {
+      "id": "e8_markets",
+      "name": "E8 Markets",
+      "website_url": "https://e8markets.com",
+      "description": "Innovative firm with custom platform choices and clean UI.",
+      "affiliate_link": "https://e8markets.com/?aff=YOUR_ID",
+      "tag": "FOREX • CFDs",
+      "is_trusted": true,
+      "logo_url": "https://e8markets.com/logo.svg",
+      "selectors": {
+        "trust_score_selector": ".uk-rating",
+        "payout_reliability_selector": ".stats-payouts",
+        "rule_clarity_selector": ".e8-rules"
+      }
+    },
+    {
+      "id": "fundednext",
+      "name": "FundedNext",
+      "website_url": "https://fundednext.com",
+      "description": "Offers payout shares even during the challenge phases.",
+      "affiliate_link": "https://fundednext.com/?aff=YOUR_ID",
+      "tag": "FOREX",
+      "is_trusted": true,
+      "logo_url": "https://fundednext.com/logo.png",
+      "selectors": {
+        "trust_score_selector": ".tp-review",
+        "payout_reliability_selector": ".reward-stats",
+        "rule_clarity_selector": ".rules-accordion"
+      }
+    },
+    {
+      "id": "alpha_capital",
+      "name": "Alpha Capital Group",
+      "website_url": "https://alphacapitalgroup.uk",
+      "description": "UK-based firm offering free retries and solid scaling.",
+      "affiliate_link": "https://alphacapitalgroup.uk/?aff=YOUR_ID",
+      "tag": "FOREX • CFDs",
+      "is_trusted": true,
+      "logo_url": "https://alphacapitalgroup.uk/logo.png",
+      "selectors": {
+        "trust_score_selector": ".trust-score",
+        "payout_reliability_selector": ".alpha-payouts",
+        "rule_clarity_selector": ".trading-rules-list"
+      }
+    },
+    {
+      "id": "fidelcrest",
+      "name": "Fidelcrest",
+      "website_url": "https://fidelcrest.com",
+      "description": "High profit splits and one of the longest-running prop firms.",
+      "affiliate_link": "https://fidelcrest.com/?aff=YOUR_ID",
+      "tag": "FOREX • CFDs",
+      "is_trusted": true,
+      "logo_url": "https://fidelcrest.com/logo.png",
+      "selectors": {
+        "trust_score_selector": ".tp-score",
+        "payout_reliability_selector": ".payout-section",
+        "rule_clarity_selector": ".program-rules"
+      }
+    },
+    {
+      "id": "true_forex_funds",
+      "name": "True Forex Funds",
+      "website_url": "https://trueforexfunds.com",
+      "description": "Zero lower boundaries on trading days, highly flexible.",
+      "affiliate_link": "https://trueforexfunds.com/?aff=YOUR_ID",
+      "tag": "FOREX • CFDs",
+      "is_trusted": true,
+      "logo_url": "https://trueforexfunds.com/logo.png",
+      "selectors": {
+        "trust_score_selector": ".trustpilot",
+        "payout_reliability_selector": ".payout-data",
+        "rule_clarity_selector": ".tff-rules"
+      }
+    },
+    {
+      "id": "surgetrader",
+      "name": "SurgeTrader",
+      "website_url": "https://surgetrader.com",
+      "description": "Straightforward 1-step evaluation with a hard drawdown limit.",
+      "affiliate_link": "https://surgetrader.com/?aff=YOUR_ID",
+      "tag": "FOREX",
+      "is_trusted": true,
+      "logo_url": "https://surgetrader.com/logo.png",
+      "selectors": {
+        "trust_score_selector": ".tp-stars",
+        "payout_reliability_selector": ".surge-payouts",
+        "rule_clarity_selector": ".rules-container"
+      }
+    },
+    {
+      "id": "lux_trading",
+      "name": "Lux Trading Firm",
+      "website_url": "https://luxtradingfirm.com",
+      "description": "Professional firm providing real live capital directly after evaluations.",
+      "affiliate_link": "https://luxtradingfirm.com/?aff=YOUR_ID",
+      "tag": "FOREX • EQUITIES",
+      "is_trusted": true,
+      "logo_url": "https://luxtradingfirm.com/logo.png",
+      "selectors": {
+        "trust_score_selector": ".trustpilot-score",
+        "payout_reliability_selector": ".capital-scaling",
+        "rule_clarity_selector": ".rules"
+      }
+    },
+    {
+      "id": "audacity_capital",
+      "name": "Audacity Capital",
+      "website_url": "https://audacitycapital.co.uk",
+      "description": "Real live accounts from day one, skipping demo challenges entirely.",
+      "affiliate_link": "https://audacitycapital.co.uk/?aff=YOUR_ID",
+      "tag": "FOREX",
+      "is_trusted": true,
+      "logo_url": "https://audacitycapital.co.uk/logo.png",
+      "selectors": {
+        "trust_score_selector": ".rating-score",
+        "payout_reliability_selector": ".funded-payouts",
+        "rule_clarity_selector": ".guidelines"
+      }
+    },
+    {
+      "id": "finotive_funding",
+      "name": "Finotive Funding",
+      "website_url": "https://finotivefunding.com",
+      "description": "Allows EA (Expert Advisors) and holds over the weekend.",
+      "affiliate_link": "https://finotivefunding.com/?aff=YOUR_ID",
+      "tag": "FOREX",
+      "is_trusted": true,
+      "logo_url": "https://finotivefunding.com/logo.png",
+      "selectors": {
+        "trust_score_selector": ".tp-widget",
+        "payout_reliability_selector": ".withdraw",
+        "rule_clarity_selector": ".finotive-rules"
+      }
+    },
+    {
+      "id": "blue_guardian",
+      "name": "Blue Guardian",
+      "website_url": "https://blueguardian.com",
+      "description": "Features an EA protector to prevent accidental hard breaches.",
+      "affiliate_link": "https://blueguardian.com/?aff=YOUR_ID",
+      "tag": "FOREX • CRYPTO",
+      "is_trusted": true,
+      "logo_url": "https://blueguardian.com/logo.png",
+      "selectors": {
+        "trust_score_selector": ".trust-rating",
+        "payout_reliability_selector": ".bg-payouts",
+        "rule_clarity_selector": ".rules-policy"
+      }
+    },
+    {
+      "id": "maven_trading",
+      "name": "Maven Trading",
+      "website_url": "https://maventrading.com",
+      "description": "Highly competitive pricing and low targets for challenges.",
+      "affiliate_link": "https://maventrading.com/?aff=YOUR_ID",
+      "tag": "FOREX",
+      "is_trusted": true,
+      "logo_url": "https://maventrading.com/logo.png",
+      "selectors": {
+        "trust_score_selector": ".tp",
+        "payout_reliability_selector": ".payout-stats",
+        "rule_clarity_selector": ".rules"
+      }
+    },
+    {
+      "id": "sabio_trade",
+      "name": "SabioTrade",
+      "website_url": "https://sabiotrade.com",
+      "description": "Clean proprietary ecosystem and very generous profit splits.",
+      "affiliate_link": "https://sabiotrade.com/?aff=YOUR_ID",
+      "tag": "FOREX",
+      "is_trusted": true,
+      "logo_url": "https://sabiotrade.com/logo.png",
+      "selectors": {
+        "trust_score_selector": ".trustpilot span",
+        "payout_reliability_selector": ".payouts",
+        "rule_clarity_selector": ".sabio-rules"
+      }
+    },
+    {
+      "id": "goat_funded",
+      "name": "Goat Funded Trader",
+      "website_url": "https://goatfundedtrader.com",
+      "description": "Aggressive scaling options and fast bi-weekly payouts.",
+      "affiliate_link": "https://goatfundedtrader.com/?aff=YOUR_ID",
+      "tag": "FOREX • CFDs",
+      "is_trusted": true,
+      "logo_url": "https://goatfundedtrader.com/logo.png",
+      "selectors": {
+        "trust_score_selector": ".trustpilot",
+        "payout_reliability_selector": ".payout-board",
+        "rule_clarity_selector": ".goat-rules"
+      }
+    },
+    {
+      "id": "the_trading_pit",
+      "name": "The Trading Pit",
+      "website_url": "https://thetradingpit.com",
+      "description": "Multi-asset firm bridging the gap between prop and asset management.",
+      "affiliate_link": "https://thetradingpit.com/?aff=YOUR_ID",
+      "tag": "FUTURES • FOREX",
+      "is_trusted": true,
+      "logo_url": "https://thetradingpit.com/logo.png",
+      "selectors": {
+        "trust_score_selector": ".rating-box",
+        "payout_reliability_selector": ".ttp-payouts",
+        "rule_clarity_selector": ".ttp-rules"
+      }
+    },
+    {
+      "id": "lark_funding",
+      "name": "Lark Funding",
+      "website_url": "https://larkfunding.com",
+      "description": "Transparent rules, no hidden spreads, and rapid account issuance.",
+      "affiliate_link": "https://larkfunding.com/?aff=YOUR_ID",
+      "tag": "FOREX",
+      "is_trusted": true,
+      "logo_url": "https://larkfunding.com/logo.png",
+      "selectors": {
+        "trust_score_selector": ".tp-review",
+        "payout_reliability_selector": ".payout-proof",
+        "rule_clarity_selector": ".lark-rules"
+      }
+    },
+    {
+      "id": "tradeday",
+      "name": "TradeDay",
+      "website_url": "https://tradeday.com",
+      "description": "End-of-day drawdown Futures prop firm protecting traders from intraday spikes.",
+      "affiliate_link": "https://tradeday.com/?aff=YOUR_ID",
+      "tag": "FUTURES",
+      "is_trusted": true,
+      "logo_url": "https://tradeday.com/logo.png",
+      "selectors": {
+        "trust_score_selector": ".trustpilot",
+        "payout_reliability_selector": ".stats",
+        "rule_clarity_selector": ".faq"
+      }
+    },
+    {
+      "id": "earn2trade",
+      "name": "Earn2Trade",
+      "website_url": "https://earn2trade.com",
+      "description": "The 'Gauntlet Mini' is an industry favorite for futures scaling.",
+      "affiliate_link": "https://earn2trade.com/?aff=YOUR_ID",
+      "tag": "FUTURES",
+      "is_trusted": true,
+      "logo_url": "https://earn2trade.com/logo.png",
+      "selectors": {
+        "trust_score_selector": ".tp-rating",
+        "payout_reliability_selector": ".payouts",
+        "rule_clarity_selector": ".gauntlet-rules"
+      }
+    },
+    {
+      "id": "uprofit",
+      "name": "UProfit",
+      "website_url": "https://uprofit.com",
+      "description": "Simple rules with minimal day constraints on futures combines.",
+      "affiliate_link": "https://uprofit.com/?aff=YOUR_ID",
+      "tag": "FUTURES",
+      "is_trusted": true,
+      "logo_url": "https://uprofit.com/logo.png",
+      "selectors": {
+        "trust_score_selector": ".trustpilot span",
+        "payout_reliability_selector": ".withdraw",
+        "rule_clarity_selector": ".rules"
+      }
+    },
+    {
+      "id": "ticktick_trader",
+      "name": "TickTick Trader",
+      "website_url": "https://tickticktrader.com",
+      "description": "Offers direct-funding options bypassing evaluations completely.",
+      "affiliate_link": "https://tickticktrader.com/?aff=YOUR_ID",
+      "tag": "FUTURES",
+      "is_trusted": true,
+      "logo_url": "https://tickticktrader.com/logo.png",
+      "selectors": {
+        "trust_score_selector": ".trust-score",
+        "payout_reliability_selector": ".payouts",
+        "rule_clarity_selector": ".rules"
+      }
+    },
+    {
+      "id": "leeloo",
+      "name": "Leeloo Trading",
+      "website_url": "https://leelootrading.com",
+      "description": "One of the longest-standing futures evaluation firms with reliable payments.",
+      "affiliate_link": "https://leelootrading.com/?aff=YOUR_ID",
+      "tag": "FUTURES",
+      "is_trusted": true,
+      "logo_url": "https://leelootrading.com/logo.png",
+      "selectors": {
+        "trust_score_selector": ".tp",
+        "payout_reliability_selector": ".payout-proof",
+        "rule_clarity_selector": ".leeloo-rules"
+      }
+    },
+    {
+      "id": "bulenox",
+      "name": "Bulenox",
+      "website_url": "https://bulenox.com",
+      "description": "Often runs massive discounts and allows multiple master accounts.",
+      "affiliate_link": "https://bulenox.com/?aff=YOUR_ID",
+      "tag": "FUTURES",
+      "is_trusted": true,
+      "logo_url": "https://bulenox.com/logo.png",
+      "selectors": {
+        "trust_score_selector": ".trustpilot",
+        "payout_reliability_selector": ".withdrawals",
+        "rule_clarity_selector": ".rules"
+      }
+    },
+    {
+      "id": "elite_trader_funding",
+      "name": "Elite Trader Funding",
+      "website_url": "https://elitetraderfunding.com",
+      "description": "Vast array of account options including static and trailing drawdowns.",
+      "affiliate_link": "https://elitetraderfunding.com/?aff=YOUR_ID",
+      "tag": "FUTURES",
+      "is_trusted": true,
+      "logo_url": "https://elitetraderfunding.com/logo.png",
+      "selectors": {
+        "trust_score_selector": ".rating",
+        "payout_reliability_selector": ".payout-stats",
+        "rule_clarity_selector": ".etf-rules"
+      }
+    },
+    {
+      "id": "oneup_trader",
+      "name": "OneUp Trader",
+      "website_url": "https://oneuptrader.com",
+      "description": "Platform-agnostic funding firm with excellent support teams.",
+      "affiliate_link": "https://oneuptrader.com/?aff=YOUR_ID",
+      "tag": "FUTURES",
+      "is_trusted": true,
+      "logo_url": "https://oneuptrader.com/logo.png",
+      "selectors": {
+        "trust_score_selector": ".tp-widget",
+        "payout_reliability_selector": ".payout-proof",
+        "rule_clarity_selector": ".rules-accordion"
+      }
+    },
+    {
+      "id": "myfundedfx",
+      "name": "MyFundedFX",
+      "website_url": "https://myfundedfx.com",
+      "description": "Rapidly expanding Forex firm known for incredible trader dashboards.",
+      "affiliate_link": "https://myfundedfx.com/?aff=YOUR_ID",
+      "tag": "FOREX",
+      "is_trusted": true,
+      "logo_url": "https://myfundedfx.com/logo.png",
+      "selectors": {
+        "trust_score_selector": ".trustpilot-score",
+        "payout_reliability_selector": ".payouts",
+        "rule_clarity_selector": ".rules"
+      }
+    },
+    {
+      "id": "ment_funding",
+      "name": "Ment Funding",
+      "website_url": "https://mentfunding.com",
+      "description": "Focuses heavily on educational mentorship directly linked with funding.",
+      "affiliate_link": "https://mentfunding.com/?aff=YOUR_ID",
+      "tag": "FOREX",
+      "is_trusted": true,
+      "logo_url": "https://mentfunding.com/logo.png",
+      "selectors": {
+        "trust_score_selector": ".trust-stars",
+        "payout_reliability_selector": ".funded-stats",
+        "rule_clarity_selector": ".program-rules"
+      }
+    }
+  ]
+}
