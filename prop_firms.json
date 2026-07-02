@@ -20,7 +20,7 @@
       "agent_id": "RuleAnalyzer_01",
       "agent_type": "rule_change_detector",
       "strictness_level": "high",
-      "execution_frequency_hours": 2
+      "execution_frequency_hours": 1
     },
     {
       "agent_id": "TrustValidator_01",
